@@ -68,7 +68,7 @@ const Sidebar = (props) => {
                   }
                 </li>
                 <li className="menu-title">
-                  <span>Employees</span>
+                  <span>Task manager</span>
                 </li>
                 <li className="submenu" >
                   <a href="#" className={isSideMenu == "employee" ? "subdrop" : ""} onClick={() => toggleSidebar(isSideMenu == "employee" ? "" : "employee")}><i className="la la-user" /> <span className="noti-dot"> Employees</span> <span className="menu-arrow" /></a>
@@ -224,9 +224,6 @@ const Sidebar = (props) => {
                 <li className={pathname.includes('administrator/users') ? "active" : ""}>
                   <Link to="/app/administrator/users"><i className="la la-user-plus" /> <span>Users</span></Link>
                 </li>
-                <li>
-                  <Link to="/settings/companysetting"><i className="la la-cog" /> <span>Settings</span></Link>
-                </li>
                 <li className="menu-title">
                   <span>Pages</span>
                 </li>
@@ -370,21 +367,10 @@ const Sidebar = (props) => {
             </nav>
             <ul className="sidebar-vertical" id='veritical-sidebar'>
               <li className="menu-title">
-                <span>Employees</span>
-              </li>
-              <li className="submenu" >
-                <a href="#" className={isSideMenu == "employee" ? "subdrop" : ""} onClick={() => toggleSidebar(isSideMenu == "employee" ? "" : "employee")}><i className="la la-user" /> <span className="noti-dot"> Employees</span> <span className="menu-arrow" /></a>
-                {isSideMenu == "employee" ?
-
-                  <ul >
-                    <li><Link className={pathname.includes('allemployees') ? "active" : pathname.includes('employees-list') ? "active" : ""}
-                      to="/app/employee/allemployees">All Employees</Link></li>
-                  </ul>
-                  : ""
-                }
+                <span>Task manager</span>
               </li>
               <li className="submenu">
-                <a href="#" className={isSideMenu == "projects" ? "subdrop" : ""} onClick={() => toggleSidebar(isSideMenu == "projects" ? "" : "projects")}><i className="la la-rocket" /> <span> Projects</span> <span className="menu-arrow" /></a>
+                <a href="#" className={isSideMenu == "projects" ? "subdrop" : ""} onClick={() => toggleSidebar(isSideMenu == "projects" ? "" : "projects")}><i className="la la-rocket" /> <span className="noti-dot"> Projects</span> <span className="menu-arrow" /></a>
                 {isSideMenu == "projects" ?
                   <ul>
                     <li><Link className={pathname.includes('t_dashboard') ? "active" : pathname.includes('projects-list') ?
@@ -392,6 +378,17 @@ const Sidebar = (props) => {
                       to="/app/projects/project_dashboard">Projects</Link></li>
                     <li><Link onClick={() => localStorage.setItem("minheight", "true")} to="/tasks/tasks">Tasks</Link></li>
                     <li><Link className={pathname.includes('task-board') ? "active" : ""} to="/app/projects/task-board">Task Board</Link></li>
+                  </ul>
+                  : ""
+                }
+              </li>
+              <li className="submenu" >
+                <a href="#" className={isSideMenu == "employee" ? "subdrop" : ""} onClick={() => toggleSidebar(isSideMenu == "employee" ? "" : "employee")}><i className="la la-user" /> <span>Employees</span> <span className="menu-arrow" /></a>
+                {isSideMenu == "employee" ?
+
+                  <ul >
+                    <li><Link className={pathname.includes('allemployees') ? "active" : pathname.includes('employees-list') ? "active" : ""}
+                      to="/app/employee/allemployees">All Employees</Link></li>
                   </ul>
                   : ""
                 }
@@ -404,9 +401,6 @@ const Sidebar = (props) => {
               </li>
               <li className={pathname.includes('administrator/users') ? "active" : ""}>
                 <Link to="/app/administrator/users"><i className="la la-user-plus" /> <span>Users</span></Link>
-              </li>
-              <li>
-                <Link to="/settings/companysetting"><i className="la la-cog" /> <span>Settings</span></Link>
               </li>
               <li className="menu-title">
                 <span>Pages</span>
