@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../Entryfile/features/users.jsx";
 import { withFormik, Form, Field, ErrorMessage } from "formik";
 import { connect } from "react-redux";
+import { singinCyberbugAction } from "../redux/actions/CyberbugsAction";
 
 function Loginpage(props) {
   const {
@@ -27,7 +28,6 @@ function Loginpage(props) {
 
   return (
     <div className="account-content">
-      {/* <Link to="/applyjob/joblist" className="btn btn-primary apply-btn">Apply Job</Link> */}
       <div className="container">
         {/* Account Logo */}
         <div className="account-logo">
@@ -102,14 +102,23 @@ const LoginCyberBugsWithFormik = withFormik({
     email: Yup.string()
       .required("Email is required")
       .email("Email is invalid"),
-    password: Yup.string()
+      password: Yup.string()
       .min(6, "Password must have min 6 characters")
       .max(32, "Password must have max 32 characters"),
   }),
-  handleSubmit: (values, { props, setSubmitting }) => {
-    console.log(values);
+  handleSubmit: ({ email, password }, { props, setSubmitting }) => {
+    props.dispatch(singinCyberbugAction(email, password));
+    // let action = {
+    //   type: USER_SIGNIN_API,
+    //   userLogin: {
+    //     email: values.email,
+    //     password: values.password,
+    //   },
+    // };
+
+    // console.log(props);
+    // console.log(values);
     // Gửi dữ liệu lên server hoặc thực hiện các xử lý khác
-    setSubmitting(false);
   },
 
   displayName: "Login Cyberbugs",
