@@ -9312,7 +9312,9 @@ button.close {
  .account-logo {
   margin-bottom: 30px;
   text-align: center;
+  margin-left: 300px;
 }
+
 .account-content .account-box {
   background-color: #ffffff;
   border: 1px solid #ededed;
@@ -9774,6 +9776,7 @@ position:  relative;
  .account-logo {
   margin-bottom: 30px;
   text-align: center;
+  margin-left: 300px;
 }
 .account-content .account-box {
   background-color: #ffffff;
@@ -10235,6 +10238,7 @@ position:  relative;
  .account-logo {
   margin-bottom: 30px;
   text-align: center;
+  margin-left: 300px;
 }
 .account-content .account-box {
   background-color: #ffffff;
@@ -10696,6 +10700,7 @@ position:  relative;
  .account-logo {
   margin-bottom: 30px;
   text-align: center;
+  margin-left: 300px;
 }
 .account-content .account-box {
   background-color: #ffffff;
@@ -11229,6 +11234,7 @@ position:  relative;
  .account-logo {
   margin-bottom: 30px;
   text-align: center;
+  margin-left: 300px;
 }
 .account-content .account-box {
   background-color: #ffffff;
